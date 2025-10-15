@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                deploy adapters: [tomcat8(credentialsId: 'your-tomcat-cred-id', url: 'http://localhost:8080')], war: '**/target/*.war'
+                sh 'cp target/*.war /path/to/tomcat/webapps/'
             }
         }
     }
